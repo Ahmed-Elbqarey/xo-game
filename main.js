@@ -1,12 +1,14 @@
 let text = document.getElementById("text");
 let turn = "x";
 let squares = [];
+let button = document.getElementById("new");
 
 function theWinner(num1, num2, num3) {
   text.innerHTML = `${squares[num1]} winner `;
   document.getElementById("square" + num1).style.backgroundColor = "#000";
   document.getElementById("square" + num2).style.backgroundColor = "#000";
   document.getElementById("square" + num3).style.backgroundColor = "#000";
+  button.style.display = "block";
 }
 
 function winner() {
@@ -76,4 +78,8 @@ function game(id) {
     turn = "x";
   }
   winner();
+}
+function newGame() {
+  button.style.display = "none";
+  location.reload();
 }
