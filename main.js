@@ -67,12 +67,12 @@ function winner() {
 }
 
 function game(id) {
-  let square = document.getElementById(id);
+  square = document.getElementById(id);
   if (turn === "x" && square.innerHTML == "") {
     square.innerHTML = "x";
     text.innerHTML = "o";
     turn = "o";
-  } else {
+  } else if (turn == "o" && square.innerHTML == "") {
     square.innerHTML = "o";
     text.innerHTML = "x";
     turn = "x";
