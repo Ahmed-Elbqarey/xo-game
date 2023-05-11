@@ -2,14 +2,17 @@ let text = document.getElementById("text");
 let turn = "x";
 let squares = [];
 let button = document.getElementById("new");
+let square;
 
 function theWinner(num1, num2, num3) {
   text.innerHTML = `${squares[num1]} winner `;
-  document.getElementById("square" + num1).style.backgroundColor = "#000";
-  document.getElementById("square" + num2).style.backgroundColor = "#000";
-  document.getElementById("square" + num3).style.backgroundColor = "#000";
-  button.style.display = "block";
-}
+  document.getElementById("square" + num1).style.backgroundColor = "#38a638";
+  document.getElementById("square" + num2).style.backgroundColor = "#38a638";
+  document.getElementById("square" + num3).style.backgroundColor = "#38a638";
+  setTimeout(() => {
+    location.reload()
+  }, 2000);
+  }
 
 function winner() {
   for (let i = 1; i < 10; i++) {
@@ -63,6 +66,19 @@ function winner() {
     squares[3] != ""
   ) {
     theWinner(3, 6, 9);
+  } else if (
+    squares[1] != "" &&
+    squares[2] != "" &&
+    squares[3] != "" &&
+    squares[4] != "" &&
+    squares[5] != "" &&
+    squares[6] != "" &&
+    squares[7] != "" &&
+    squares[8] != "" &&
+    squares[9] != ""
+  ) {
+    button.style.display = "block";
+    text.innerHTML = "PLAY AGIN"
   }
 }
 
@@ -80,6 +96,5 @@ function game(id) {
   winner();
 }
 function newGame() {
-  button.style.display = "none";
   location.reload();
 }
