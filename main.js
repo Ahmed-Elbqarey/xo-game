@@ -10,9 +10,9 @@ function theWinner(num1, num2, num3) {
   document.getElementById("square" + num2).style.backgroundColor = "#38a638";
   document.getElementById("square" + num3).style.backgroundColor = "#38a638";
   setTimeout(() => {
-    location.reload()
+    location.reload();
   }, 2000);
-  }
+}
 
 function winner() {
   for (let i = 1; i < 10; i++) {
@@ -77,8 +77,8 @@ function winner() {
     squares[8] != "" &&
     squares[9] != ""
   ) {
-    button.style.display = "block";
-    text.innerHTML = "PLAY AGIN"
+    button.style.display = "flex";
+    text.innerHTML = "PLAY AGIN";
   }
 }
 
